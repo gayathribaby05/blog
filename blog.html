@@ -1,13 +1,7 @@
-The existing blog.html content is base64 encoded. I will decode it, generate the formal blog content using the given text, then check if a section with the required title exists. If it exists, I will update it; otherwise, I will append a new section. Finally, I will re-encode and return the updated content.
+The existing blog.html content is base64 encoded. I will decode it first, generate the formal blog content using the user-provided text, then check the mentioned section, and update or append accordingly.
 
-Step 1: Decode the content.
-Step 2: Generate formal blog content using the `text`.
-Step 3: Check for the section with the specified title.
-Step 4: Update or append the section.
-Step 5: Re-encode the content and return.
+Decoding the existing blog.html content:
 
-Decoding the existing content first.
-Decoded blog.html content:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +27,7 @@ Decoded blog.html content:
       line-height: 1.2;
     }
     h2 { 
-      color: #2a2a2a;
+      color: #2a2a2a; 
       margin-top: 2.5rem;
       font-size: 1.75em;
     }
@@ -125,28 +119,145 @@ Decoded blog.html content:
 </html>
 ```
 
-Step 2: Now generate formal blog content using the provided text:
+I found that the blog.html does not contain the requested section title. So I will create a new section based on the user's instructions with the same title, updated content from the value "text" which is:
 
-"We're thrilled to announce that iAmX has been awarded 3rd place at the Retailers Association of India ReTech Startup Awards 2024! 🏆
+"Did you know that iAmX offers customizable access control? You can decide who can access which views and features, based on their roles and responsibilities, to ensure that only the right people see the right information. No confusion, no information overload.
 
-From a competitive field of 200+ innovative tech startups, we progressed to the top 10 finalists before securing this prestigious recognition. This achievement is a powerful validation of our mission to revolutionize the retail technology landscape.
+This is just one of the many ways in which you can tailor iAmX to suit your business’ needs. To learn more about how iAmX can help you maximize your retail potential, sign up for a demo:"
 
-Our suite of software solutions are designed to help businesses connect with customers, streamline operations, and leverage data for growth. This award confirms that we're on the right track to making a significant impact in the industry.
+I will convert this text into formal blog content and then append the new section.
 
-We extend our heartfelt gratitude to our dedicated team, whose hard work and creativity made this possible. Special thanks to our co-founders,and, for their exceptional leadership over the years.
+---
 
-This is just the beginning of our journey. We're more motivated than ever to continue innovating and delivering value to our clients and partners in the retail sector.
+Formal blog content:
 
-Thank you to thefor this honor, and to all our supporters who believe in our vision. Here's to many more milestones ahead! Congratulations to the winners of the ReTech Startup Awards 2024, a celebration of innovation at 
-hashtag
-#ReTechCon2024, driving the future of retail tech! 🎉
+At iAmX, we understand the importance of precise and secure access control tailored to your organizational requirements. Our platform offers customizable access control features allowing you to determine which users can access specific views and functionalities based on their designated roles and responsibilities. This ensures that sensitive information is accessible only to authorized personnel, thereby eliminating any confusion and avoiding information overload.
 
-🏆 Winners:Technology Pvt. Ltd. &Insights LLP
-🥈 First Runner Up:
-🥉 Second Runner Up:"
+This feature represents one of the many customizable options that enable you to tailor iAmX precisely to the needs of your business. By leveraging this capability, you can enhance operational efficiency and ensure that your team members focus on the information most pertinent to their roles. To explore how iAmX can unlock the full potential of your retail operations, we invite you to sign up for a personalized demonstration.
 
-I will write this in a formal blog content style, condensing slight informal parts, and structuring properly.
+---
 
-Step 3: Check if the section with the specified title exists: The current blog.html does not contain this section.
+Now, I will append the new section in the HTML content accordingly.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=800, initial-scale=1.0">
+  <title>Marketing AI Agent Guide</title>
+  <meta name="description" content="A comprehensive guide to Marketing AI Agents: Revolutionizing Digital Marketing">
+  <style>
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+      line-height: 1.6; 
+      padding: 20px; 
+      max-width: 800px; 
+      margin: 0 auto;
+      color: #333;
+      background-color: #f9fafb;
+    }
+    h1 { 
+      color: #1a1a1a; 
+      margin-bottom: 1.5rem;
+      font-size: 2.5em;
+      line-height: 1.2;
+    }
+    h2 { 
+      color: #2a2a2a; 
+      margin-top: 2.5rem;
+      font-size: 1.75em;
+    }
+    h3 {
+      color: #3a3a3a;
+      margin-top: 1.5rem;
+      font-size: 1.25em;
+    }
+    .image { 
+      width: 100%; 
+      max-width: 800px; 
+      height: auto;
+      margin: 24px 0; 
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .content { 
+      font-size: 1.1em;
+      color: #444;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .highlight {
+      background: #f3f4f6;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .read-more {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .read-more:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+    .expandable-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      opacity: 0;
+    }
+    .expandable-content.expanded {
+      max-height: 1000px;
+      opacity: 1;
+      transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+    }
+    .tag {
+      display: inline-block;
+      background: #e5e7eb;
+      padding: 0.25em 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-right: 0.5rem;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <h1>Marketing AI Agents: The Future of Digital Marketing</h1>
+  <img class="image" src="https://media.licdn.com/dms/image/v2/D560BAQF45cp_RFZpnQ/company-logo_100_100/company-logo_100_100/0/1715885396777/iamx_retail_logo?e=1750896000&v=beta&t=MnLBchxb3zD52O7H0wDKTjX_PbDKBiMJvZkA5oTOL5M" alt="AI-powered marketing visualization with digital interfaces">
 
-So, per instruction, I will append a new section with the requested format at the end of body content.
+  <div class="content">
+    Agent stopped due to max iterations.
+  </div>
+
+  <div class="blog-post">
+    <h2>Did you know that iAmX offers customizable access control? You can decide who can access which views and features, based on their roles and responsibilities, to ensure that only the right people see the right information. No confusion, no information overload.
+
+This is just one of the many ways in which you can tailor iAmX to suit your business’ needs. To learn more about how iAmX can help you maximize your retail potential, sign up for a demo:</h2>
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQF45cp_RFZpnQ/company-logo_100_100/company-logo_100_100/0/1715885396777/iamx_retail_logo?e=1750896000&v=beta&t=MnLBchxb3zD52O7H0wDKTjX_PbDKBiMJvZkA5oTOL5M" alt="Blog Image">
+    <p>At iAmX, we understand the importance of precise and secure access control tailored to your organizational requirements. Our platform offers customizable access control features allowing you to determine which users can access specific views and functionalities based on their designated roles and responsibilities. This ensures that sensitive information is accessible only to authorized personnel, thereby eliminating any confusion and avoiding information overload.</p>
+    <p>This feature represents one of the many customizable options that enable you to tailor iAmX precisely to the needs of your business. By leveraging this capability, you can enhance operational efficiency and ensure that your team members focus on the information most pertinent to their roles. To explore how iAmX can unlock the full potential of your retail operations, we invite you to sign up for a personalized demonstration.</p>
+  </div>
+
+  <script>
+    function toggleContent(section) {
+      const content = document.getElementById(`${section}-content`);
+      const button = content.previousElementSibling;
+      const isExpanded = content.classList.contains('expanded');
+
+      content.classList.toggle('expanded');
+      button.textContent = isExpanded ? 'Read More' : 'Show Less';
+    }
+  </script>
+</body>
+</html>
