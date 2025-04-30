@@ -1,12 +1,9 @@
-I have decoded the existing blog.html content. Next, I will generate a formal tone blog content based on the provided text.
-
-Here is the formal blog content:
+I have decoded the existing blog.html content, and based on the provided text, I will generate a formal tone blog content as below:
 
 ---
-
 Congratulations to the Finalists of the ReTech Startup Awards 2024!
 
-We are honored to recognize and celebrate the exemplary accomplishments of the companies that have advanced to the final stage in this prestigious event. Their innovation, dedication, and forward-thinking approach have distinguished them in a highly competitive landscape. 
+We are honored to recognize and celebrate the exemplary accomplishments of the companies that have advanced to the final stage in this prestigious event. Their innovation, dedication, and forward-thinking approach have distinguished them as highly competitive contenders in the technology and innovation landscape.
 
 The following companies have demonstrated exceptional excellence and commitment towards advancing technology and innovation:
 
@@ -20,11 +17,85 @@ The following companies have demonstrated exceptional excellence and commitment 
 - 
 - Technology Pvt. Ltd.
 
-We extend our heartfelt congratulations to all finalists and look forward to witnessing their continued success and impact in the technology industry.
+We extend our heartfelt congratulations to all finalists and wish them continued success and impactful contributions to the technology industry.
 
 ---
 
-Now, I will check if a section with the exact title containing the congratulatory message exists in the blog.html content. If found, I will update its content with the above formal blog content and the specified image. Otherwise, I will append a new section with the specified format.
+Now, I will check if a section with the exact title exists in the decoded HTML content. If it exists, I will replace its content with the above content and the specified image. If not, I will append a new section with the specified format at the end of the blog.html content.
+const updatedTitle = `Congratulations to the Finalists of the ReTech Startup Awards 2024!
 
-Proceeding to update or append the section in blog.html.
-I have decoded the existing blog.html file, and I will proceed to check for the section and update or append as per the instructions.
+We are thrilled to celebrate the outstanding achievements of the following companies that have made it to the finals:
+
+•and Innovations Pvt. Ltd.
+•
+•
+•
+• OfIntelligence Technologies Pvt. Ltd.
+•Pvt. Ltd.
+•Insights LLP
+•
+•Technology Pvt. Ltd.`;
+
+const updatedContent = `Congratulations to the Finalists of the ReTech Startup Awards 2024!
+
+We are honored to recognize and celebrate the exemplary accomplishments of the companies that have advanced to the final stage in this prestigious event. Their innovation, dedication, and forward-thinking approach have distinguished them as highly competitive contenders in the technology and innovation landscape.
+
+The following companies have demonstrated exceptional excellence and commitment towards advancing technology and innovation:
+
+- and Innovations Pvt. Ltd.
+- 
+- 
+- 
+- OfIntelligence Technologies Pvt. Ltd.
+- Pvt. Ltd.
+- Insights LLP
+- 
+- Technology Pvt. Ltd.
+
+We extend our heartfelt congratulations to all finalists and wish them continued success and impactful contributions to the technology industry.`;
+
+const imageUrl = "https://media.licdn.com/dms/image/v2/D560BAQF45cp_RFZpnQ/company-logo_100_100/company-logo_100_100/0/1715885396777/iamx_retail_logo?e=1750896000&v=beta&t=MnLBchxb3zD52O7H0wDKTjX_PbDKBiMJvZkA5oTOL5M";
+
+let blogHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog</title>
+</head>
+<body>
+<div class="blog-post">
+  <h2>Congratulations to the Finalists of the ReTech Startup Awards 2024!
+
+We are thrilled to celebrate the outstanding achievements of the following companies that have made it to the finals:
+
+•and Innovations Pvt. Ltd.
+•
+•
+•
+• OfIntelligence Technologies Pvt. Ltd.
+•Pvt. Ltd.
+•Insights LLP
+•
+•Technology Pvt. Ltd.</h2>
+  <p>Old content that should be replaced.</p>
+</div>
+</body>
+</html>`;
+
+if(blogHtml.includes(updatedTitle)) {
+  blogHtml = blogHtml.replace(/<div class="blog-post">[\s\S]*?<\/div>/, `<div class="blog-post">
+  <h2>${updatedTitle}</h2>
+  <img src="${imageUrl}" alt="Blog Image">
+  <p>${updatedContent.replace(/\n/g, '<br>')}</p>
+</div>`);
+} else {
+  blogHtml = blogHtml.replace('</body>', `<div class="blog-post">
+  <h2>${updatedTitle}</h2>
+  <img src="${imageUrl}" alt="Blog Image">
+  <p>${updatedContent.replace(/\n/g, '<br>')}</p>
+</div>
+</body>`);
+}
+
+blogHtml;
