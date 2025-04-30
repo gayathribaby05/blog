@@ -1,55 +1,37 @@
-The existing content in blog.html is base64 encoded. I will decode it first to check for the specified section title.
+The existing content of blog.html is base64 encoded. I will decode it first to check if the specified section title exists. Then I will update or append the section accordingly with the formal blog content and the provided image URL.
 
-Decoding the base64 content, the existing content is:
-
----
-The existing blog.html content is base64 encoded. I'll decode it first to check for the specified section title.
-
-Decoded content from blog.html:
-
----
-
-The existing blog.html content is base64 encoded. I'll decode it first, check if the specified section title exists, then update or append as needed.
-
----
-
-Checking for the section title:
-
-"Congratulations to the Finalists of the ReTech Startup Awards 2024!\n\nWe are thrilled to celebrate the outstanding achievements of the following companies that have made it to the finals:\n\n•and Innovations Pvt. Ltd.\n•\n•\n•\n• OfIntelligence Technologies Pvt. Ltd.\n•Pvt. Ltd.\n•Insights LLP\n•\n•Technology Pvt. Ltd."
-
----
-
-This text has some irregularities (unfilled bullet points and concatenated company names). To create a formal blog content, I will fix and formalize this text first.
-
----
-
-Formal blog content:
-
----
-
+Decoding the existing content.
 Congratulations to the Finalists of the ReTech Startup Awards 2024!
 
-We are delighted to announce and celebrate the exceptional accomplishments of the following distinguished companies that have advanced to the finals of the ReTech Startup Awards 2024. These organizations have demonstrated remarkable expertise and innovation in the field of technology and retail solutions:
+We are delighted to announce and celebrate the exceptional accomplishments of the distinguished companies that have advanced to the final round. These organizations have demonstrated remarkable expertise and innovation within the technology and retail sectors, earning their place among the finalists through dedication and groundbreaking contributions.
+
+The following companies have been recognized for their outstanding contributions to technological advancements and retail solutions:
 
 - [Name] and Innovations Pvt. Ltd.
 - OfIntelligence Technologies Pvt. Ltd.
-- [Name] Pvt. Ltd.
 - Insights LLP
 - Technology Pvt. Ltd.
 
-Their groundbreaking contributions and relentless dedication have significantly influenced the industry, setting new benchmarks for excellence. We look forward to witnessing their continued growth and success in the marketplace.
+These finalists have significantly influenced industry standards by introducing novel ideas and setting new benchmarks in their respective fields. Their commitment to excellence and innovation is evident in their pioneering products and solutions that continue to shape the future of technology and retail.
 
----
+We extend our heartfelt congratulations to these trailblazing companies and look forward to witnessing their continued success and impactful progress in the industry. The ReTech Startup Awards 2024 is proud to honor these leaders who represent the pinnacle of achievement and vision in the ever-evolving landscape of technology and retail.
 
-Next, I will check if the section with the exact given title exists in blog.html.
+[Image: https://media.licdn.com/dms/image/v2/D560BAQF45cp_RFZpnQ/company-logo_100_100/company-logo_100_100/0/1715885396777/iamx_retail_logo?e=1750896000&v=beta&t=MnLBchxb3zD52O7H0wDKTjX_PbDKBiMJvZkA5oTOL5M]
 
-If it exists, update its content and the image with the URL provided:
+Now, I will look for the section in the blog.html file with the title:
 
-https://media.licdn.com/dms/image/v2/D560BAQF45cp_RFZpnQ/company-logo_100_100/company-logo_100_100/0/1715885396777/iamx_retail_logo?e=1750896000&v=beta&t=MnLBchxb3zD52O7H0wDKTjX_PbDKBiMJvZkA5oTOL5M
+Congratulations to the Finalists of the ReTech Startup Awards 2024!
 
-If not, append a new section at the end of the file with the given HTML structure, replacing the text with the formalized blog content.
+We are thrilled to celebrate the outstanding achievements of the following companies that have made it to the finals:
 
----
+•and Innovations Pvt. Ltd.
+•
+•
+•
+• OfIntelligence Technologies Pvt. Ltd.
+•Pvt. Ltd.
+•Insights LLP
+•
+•Technology Pvt. Ltd.
 
-I'll proceed to decode the existing content, check and edit or append the section accordingly, then return the updated blog.html content base64 encoded for committing.
-VGhlIGV4aXN0aW5nIGJsb2cuaHRtbCBjb250ZW50IGlzIGJhc2U2NCBlbmNvZGVkLiBJbiB0aGlzIGVkaXQgd29yaywgaXQgaXMgc3VwcG9zZWQgdG8gcmVtb3ZlIHRoZSBkZWxpbWl0ZWQgc3BhcmsgYW5kIHBsYWNlIGEgZm9ybWFsIGZlYXR1cmVkIGJsb2cgY29udGVudCBvciBhbmFseXRpY2FsbHkgYWRkIGEgbmV3IGNvbnRlbnQgc2VjdGlvbi4KClByb2Nlc3NpbmcgbmV4dCBzdGVwIGlzIHRvIGRlY29kZSB0aGUgY29udGVudCBmaXJzdCB0byBjaGVjayBpZiB0aGUgc3BlY2lmaWVkIHN1Y2ggYSBzZWN0aW9uIGV4aXN0cyB3aXRoIHRoZSBleGFjdCB0aXRsZSBjaGFyYWN0ZXJzLgpJZiBleGlzdHMsIGl0IHlvdWxkIChpbiBiYXNlNjQpIHRoYXQgYmVjaHVybm90cyB0byB1cGRhdGUgdGhlIGNvbnRlbnQgdG8gaW5jbHVkZSB0aGUgbmV3IGZvcm1hbCB0ZXh0IGFuZCBpbWFnZS4gSWYgbm90IGV4aXN0LCBhcHBlbmQgYSBuZXcgPHRkPiBzZWN0aW9uIGF0IHRoZSBlbmQgb2YgdGhlIGZpbGUuCgpUaGUgbmV3IHNlY3Rpb24gZm9ybWF0CgpcPGRpdiBjbGFzcz0iYmxvZy1wb3N0Ij4KICA8aDI+Q29uZ3JhdHVsYXRpb25zIHRvIHRoZSBGaW5hbGlzdHMgb2YgdGhlIFJlVGVjaCBTdGFydHVwIEF3YXJkcyAyMDI0ITwvaDI+CiAgPGltZyBzcmM9Imh0dHBzOi8vbWVkaWEubGljbmQuY29tL2Rtcy9pbWFnZS92Mi9ENTYwQkFRRjQ1Y3BfUkZa cG5RL2NvbXBhbnktbG9nb18xMDBfMTAwL2NvbXBhbnktbG9nb18xMDBfMTAwLzAvMTcxNTg4NTM5Njc3Ny9pYW14X3JldGFpbF9sb2dvP2U9MTc1MDg5NjAwMCZ2PWJldGEmdD1NbkxCY2h4YjN6RDUyTzdIMGdES3RqWF9QYkRLSmlNWndaaks1b1RPME1N IiBhbHQ9IkJsb2cgSW1hZ2UiPgogIDxwPkNvbmdyYXR1bGF0aW9ucyB0byB0aGUgRmluYWxpc3RzIG9mIHRoZSBSZVRlY2ggU3RhcnR1cCBBd2FyZHMgMjAyNCEKCiBXZSBhcmUgZGVsaWdodGVkIHRvIGFu bm91bmNlIGFuZCBjZWxlYnJhdGUgdGhlIGV4 Y2VwdGlvbmFsIGFjY29tcGxpc2htZW50cyBvZiB0aGUgZm9sbG93aW5nIGRpc3Rpbmd1aXNoZWQg Y29tcGFuaWVzIHRoYXQgaGF2ZSBtYWRlIGl0IHRvIHRoZSBmaW5hbHMgb2YgdGhlIFJlVGVjaCBTdGFydHVwIEF3YXJkcyAyMDI0L iBUaGVzZSBvcmdhbml6YXRpb25zIGhhd mUgZXhoaWJpdGVkIGV4ZW1wbGFyeSBjb21taXRtZW50IGFu ZCBpbm5vdmF0aW9uIGluIHRoZSBmaWVsZCBvZiB0ZWNobm9sb2d5IGFuZCByZXRhaWwuCgpUaGUgZm9sbG93aW5nIGNvbXBh bmllcyBoYXZlIGVhcm5lZCBhIHdlbGwtZGVzZXJ2ZWQgcGxhY2UgYW1vbm cgdGhlIGZpbmFsaXN0czogCi0gW05hbWVdIGFuZCBJbm5vdmF0aW9ucyBQdnQuIEx0ZC4KLSBP ZkludGVsbGlnZW5jZSBUZWNobm9sb2dpZXMgUHZ0 LiBMdGQuCi0gW05hbWVdIFB2 dC4gTHRkLgpAbG50czMgLSBJbnNpZ2h0cyBMTFBcbi0gVGVjaG5vbG9neSBQdm4uIEx0ZC4KCiBU aGVpci Bncm91bmRicmVha2luZyBjb250cmlidXRpb25zIGFuZCBkZWRpY2F0aW9uIHRvIGV4Y2VsbGVuY2UgaGF2ZSBzaWduaWZpY2FudGx5IGFkdmFuY2Vk IHRoZSBpbmR1c3RyeS4gV2UgbG9vayBmb3J3YXJkIHRvIHRoZWlyIGNvbnRpbmVlZCBzdWNjZXNzIGFuZCB0aGUgZXhjaXRpbmcgZGV2ZWxvcG1lbnRzIHRoZXkgd2ls bCB1bmRvdWJ0ZWRseS BicmluZyB0byB0aGUgbWFya2V0LgogIDwvcD4KPC9kaXY+Cg==
+If found, I will update this section with the above formal content and the image. If not, I will append a new section at the end of blog.html in the specified format.
