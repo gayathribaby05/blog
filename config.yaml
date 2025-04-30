@@ -1,0 +1,2 @@
+- name: Create missing directories
+  run: mkdir -p docs
