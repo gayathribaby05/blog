@@ -17,7 +17,6 @@ export default function BreedsPage() {
 
   useEffect(() => {
     const filtered = dogBreeds.filter((breed) => {
-      // Search filter
       if (
         filters.search &&
         !breed.name.toLowerCase().includes(filters.search.toLowerCase())
@@ -25,24 +24,24 @@ export default function BreedsPage() {
         return false;
       }
 
-      // Size filter
       if (
+        filters.size && 
         filters.size !== 'all' &&
         !breed.size.toLowerCase().includes(filters.size.toLowerCase())
       ) {
         return false;
       }
 
-      // Energy level filter
       if (
+        filters.energyLevel && 
         filters.energyLevel !== 'all' &&
         !breed.energyLevel.toLowerCase().includes(filters.energyLevel.toLowerCase())
       ) {
         return false;
       }
 
-      // Friendliness filter
       if (
+        filters.friendliness && 
         filters.friendliness !== 'all' &&
         !breed.friendliness.toLowerCase().includes(filters.friendliness.toLowerCase())
       ) {
